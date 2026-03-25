@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Menu, X, Home, BarChart3, Users, Settings, LogOut } from 'lucide-react'
 import { motion } from 'framer-motion'
+import './app.css'
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
