@@ -1,19 +1,15 @@
-import { Menu, X, Home, BarChart3, Users, Settings, LogOut } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Home, BarChart3, Users, Settings, Menu, X, LogOut } from 'lucide-react';
+import type { MenuItem, SidebarProps } from '../../types';
 
-interface SidebarProps {
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
-}
+const menuItems: MenuItem[] = [
+  { icon: Home, label: 'Dashboard', active: true },
+  { icon: BarChart3, label: 'Analytics' },
+  { icon: Users, label: 'Users' },
+  { icon: Settings, label: 'Settings' },
+];
 
 export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
-  const menuItems = [
-    { icon: Home, label: 'Dashboard', active: true },
-    { icon: BarChart3, label: 'Analytics' },
-    { icon: Users, label: 'Users' },
-    { icon: Settings, label: 'Settings' },
-  ];
-
   return (
     <div className={`${isOpen ? 'w-64' : 'w-20'} bg-surface border-r border-surface h-screen transition-all duration-300 flex flex-col`}>
       <div className="p-5 flex items-center justify-between border-b border-surface">
