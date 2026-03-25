@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
 /* ====================== DESIGN TOKENS (Variables CSS) ====================== */
 :root {
   /* Couleurs principales */
