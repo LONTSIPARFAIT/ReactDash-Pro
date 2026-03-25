@@ -9,13 +9,12 @@ export interface MenuItem {
 }
 
 // Type pour une carte de statistique (très utilisé dans les dashboards)
-export interface StatCard {
-  id: number;
+export interface StatCardProps {
   title: string;
   value: string | number;
   change: string;
   changeType: 'positive' | 'negative';
-  icon?: string;
+  icon?: React.ReactNode;
 }
 
 // Type pour les données utilisateur (ex: page Users)

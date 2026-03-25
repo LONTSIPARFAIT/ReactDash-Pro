@@ -1,28 +1,69 @@
-import { motion } from 'framer-motion';
+import StatCard from '../components/ui/Card';
+import { StatCardProps } from '../types';
+
+const stats: StatCardProps[] = [
+  {
+    title: "Total Revenue",
+    value: "$24,591",
+    change: "22.4%",
+    changeType: "positive",
+    icon: "📈"
+  },
+  {
+    title: "Total Users",
+    value: "8,459",
+    change: "12.8%",
+    changeType: "positive",
+    icon: "👥"
+  },
+  {
+    title: "Active Sessions",
+    value: "1,243",
+    change: "3.2%",
+    changeType: "positive",
+    icon: "🔴"
+  },
+  {
+    title: "Bounce Rate",
+    value: "24.8%",
+    change: "5.1%",
+    changeType: "negative",
+    icon: "📉"
+  }
+];
 
 export default function Dashboard() {
   return (
     <div className="max-w-7xl mx-auto">
-      <h1 className="text-4xl font-bold tracking-tight mb-2 text-text">Good morning, Parfait 👋</h1>
-      <p className="text-muted text-lg mb-10">Here’s what’s happening with your business today.</p>
+      <div className="mb-10">
+        <h1 className="text-4xl font-bold tracking-tight text-text">
+          Good morning, Parfait 👋
+        </h1>
+        <p className="text-muted text-lg mt-2">
+          Here’s what’s happening with your business today.
+        </p>
+      </div>
 
+      {/* Statistiques Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[1, 2, 3, 4].map((i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.08 }}
-            className="bg-surface border border-surface rounded-[var(--radius)] p-7 card-hover"
-          >
-            <div className="text-4xl mb-6">📈</div>
-            <div className="text-muted text-sm font-medium">Total Revenue</div>
-            <div className="text-5xl font-semibold mt-3 tracking-tighter text-text">$24,591</div>
-            <div className="flex items-center gap-2 text-success text-sm mt-5">
-              ↑ 22.4% <span className="text-text-muted">this month</span>
-            </div>
-          </motion.div>
+        {stats.map((stat, index) => (
+          <StatCard
+            key={index}
+            title={stat.title}
+            value={stat.value}
+            change={stat.change}
+            changeType={stat.changeType}
+            icon={stat.icon}
+          />
         ))}
+      </div>
+
+      {/* Zone pour les graphiques (on ajoutera ça à l'étape suivante) */}
+      <div className="mt-12">
+        <h2 className="text-2xl font-semibold text-text mb-6">Analytics Overview</h2>
+        <div className="bg-surface border border-surface rounded-[var(--radius)] h-96 flex items-center justify-center">
+          <p className="text-muted">Graphiques arriveront à l'étape prochaine...</p>
+        </div>
       </div>
     </div>
   );
