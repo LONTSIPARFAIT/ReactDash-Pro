@@ -62,7 +62,7 @@ export default function Dashboard() {
       <div className="mt-12">
         <h2 className="text-2xl font-semibold text-text mb-6">Analytics Overview</h2>
         <div className="bg-surface border border-surface rounded-[var(--radius)] h-96 flex items-center justify-center">
-          <p className="text-muted">Graphique arriveront à l'étape prochaine...</p>
+          <p className="text-muted">Graphiqu arriveront à l'étape prochaine...</p>
         </div>
       </div>
     </div>
